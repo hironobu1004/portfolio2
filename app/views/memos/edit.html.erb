@@ -3,12 +3,12 @@
 
 <%=form_tag("/memos/"+@note.id.to_s, :method=>:patch) do %>
 <%=label_tag "form-title", "Title"%>
-<%=text_field :memos, :title, class:"form-control", id:"exampleInputEmail1" ,placeholder:"title"%>
+<%=text_field :memos, :title, class:"form-control", id:"exampleInputEmail1" ,value: @note.title%>
 
 <%=label_tag "form-title", "body"%>
-<%=text_field :memos, :body, class:"form-control", id:"exampleInputEmail1" ,placeholder:"body"%>
+<%=text_area :memos, :body,class:"form-control",size: "50x40",value: @note.title%>
 <%=label_tag "form-category" , "Category" %>
 <%=select_tag "memos[category_id]",options_from_collection_for_select(@categories, "id", "name"),class:"form-control"%>
 
-<%=submit_tag "Create", class: "edit_button"%>
+<%=submit_tag "Update", class: "btn btn-primary"%>
 <%end%>
