@@ -1,0 +1,14 @@
+<h4>memo.edit</h4>
+
+
+<%=form_tag("/memos/"+@note.id.to_s, :method=>:patch) do %>
+<%=label_tag "form-title", "Title"%>
+<%=text_field :memos, :title, class:"form-control", id:"exampleInputEmail1" ,placeholder:"title"%>
+
+<%=label_tag "form-title", "body"%>
+<%=text_field :memos, :body, class:"form-control", id:"exampleInputEmail1" ,placeholder:"body"%>
+<%=label_tag "form-category" , "Category" %>
+<%=select_tag "memos[category_id]",options_from_collection_for_select(@categories, "id", "name"),class:"form-control"%>
+
+<%=submit_tag "Create", class: "edit_button"%>
+<%end%>
