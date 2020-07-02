@@ -2,14 +2,21 @@
 
 <%@notes.each do |note|%>
 <div class="col-md-4">
-<div class="panel panel-success">
-  <div class="panel-heading"><%=note.title%><h4><%= note.category.name%></h4>
-  <a href = "/memos/<%=note.id%>" data-method="delete">削除</a>
-  <a href = "/memos/<%=note.id%>/edit" >編集</a></div>
-  <div class="panel-body">
-    <%=note.body%>
-  </div>
-</div>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+          <h4>
+              <%=note.title%><br>
+              <%= note.category.name%>
+          </h4>
+          <div class="buttons">
+              <a href = "/memos/<%=note.id%>" data-method="delete"><span class= "glyphicon glyphicon-trash"></span></a>
+              <a href = "/memos/<%=note.id%>/edit" ><span class= "glyphicon glyphicon-edit"></span></a>
+          </div>
+      </div>
+      <div class="panel-body">
+          <%=note.body%>
+      </div>
+    </div>
 </div>
 
 <%end%>
