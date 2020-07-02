@@ -1,9 +1,11 @@
 <h5>memo</h5>
 
 <%@notes.each do |note|%>
+
 <div class="col-md-4">
     <div class="panel panel-success">
       <div class="panel-heading">
+        <%= image_tag "Docker.jpg",class: "image" %>
           <h4>
               <%=note.title%><br>
               <%= note.category.name%>
@@ -13,9 +15,6 @@
               <a href = "/memos/<%=note.id%>/edit" ><span class= "glyphicon glyphicon-edit"></span></a>
               <a href = "/memos/<%=note.id%>/details" ><span class= "glyphicon glyphicon-zoom-in"></span></a>
           </div>
-      </div>
-      <div class="panel-body">
-          <%=note.body%>
       </div>
     </div>
 </div>

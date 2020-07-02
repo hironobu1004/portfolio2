@@ -14,7 +14,7 @@ class MemosController < ApplicationController
     
     end
     def edit
-       @note =Note.find(params["id"])
+       @note=Note.find(params["id"])
     
     end
     def update
@@ -32,8 +32,8 @@ class MemosController < ApplicationController
         redirect_to"/"
     end   
     
-    def deteils
-        @notes= Note.all
+    def details
+        @note=Note.find(params["id"])
     
     end
 end
