@@ -30,5 +30,10 @@ class MemosController < ApplicationController
         note = Note.find(params["id"])
         note.destroy
         redirect_to"/"
-    end    
+    end   
+    
+    def deteils
+        @notes= Note.all
+    
+    end
 end
