@@ -6,7 +6,7 @@
 <%=text_field :memos, :title, class:"form-control", id:"exampleInputEmail1" ,value: @note.title%>
 
 <%=label_tag "form-title", "body"%>
-<%=text_area :memos, :body,class:"form-control",size: "50x40",value: @note.body%>
+<%=text_area :memos, :body,class:"form-control",size: "50x40",wrap:"hard",value: @note.body%>
 <%=label_tag "form-category" , "Category" %>
 <%=select_tag "memos[category_id]",options_from_collection_for_select(@categories, "id", "name"),class:"form-control"%>
 
