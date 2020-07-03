@@ -14,3 +14,8 @@
 
 <%=submit_tag "Create", class: "btn btn-primary"%>
 <%end%>
+
+<%= form_for :post, url: '/post'  do |f| %>
+  <p><%=f.label "画像をアップロード" %><br><%= f.file_field :image %></p>
+  <p><%= f.submit value: '投稿',class:"btn btn-primary" %></p>
+<% end %>

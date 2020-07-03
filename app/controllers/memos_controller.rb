@@ -11,6 +11,17 @@ class MemosController < ApplicationController
     def create
         Note.create(title:params["memos"]["title"],body:params["memos"]["body"],category_id:params["memos"]["category_id"])
         redirect_to"/"
+    def post   
+        @post = Note.new(permit_params)
+        @post.save!
+        redirect_to"/"
+    end    
+        
+
+    def permit_params
+      params.require(:post).permit(:image)
+    end
+        
     
     end
     def edit
@@ -36,4 +47,5 @@ class MemosController < ApplicationController
         @note=Note.find(params["id"])
     
     end
+    
 end
