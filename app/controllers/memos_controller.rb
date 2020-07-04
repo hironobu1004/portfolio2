@@ -9,18 +9,9 @@ class MemosController < ApplicationController
     
     end
     def create
-        Note.create(title:params["memos"]["title"],body:params["memos"]["body"],category_id:params["memos"]["category_id"])
-        redirect_to"/"
-    def post   
-        @post = Note.new(permit_params)
-        @post.save!
-        redirect_to"/"
-    end    
-        
+        Note.create(title:params["memos"]["title"],body:params["memos"]["body"],category_id:params["memos"]["category_id"],image:params["memos"]["image"])
+        redirect_to"/all"
 
-    def permit_params
-      params.require(:post).permit(:image)
-    end
         
     
     end
@@ -34,13 +25,13 @@ class MemosController < ApplicationController
         note.body = params["memos"]["body"]
         note.category_id =params["memos"]["category_id"]
         note.save
-        redirect_to"/"
+        redirect_to"/all"
     
     end
     def destroy
         note = Note.find(params["id"])
         note.destroy
-        redirect_to"/"
+        redirect_to"/all"
     end   
     
     def details

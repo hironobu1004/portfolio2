@@ -1,13 +1,13 @@
-<h5>memo</h5>
+<h3>All Book</h3>
 
 <%@notes.each do |note|%>
 
 <div class="col-md-4">
     <div class="panel panel-success">
       <div class="panel-heading">
-        <%= image_tag "Docker.jpg",class: "image" %>
+        <img src="<%= "#{note.image}" %>">
           <h4>
-              <%=note.title%><br>
+              <%=note.title%><br><%=note.updated_at.strftime('%Y/%m/%d')%><br>
               <%= note.category.name%>
           </h4>
           <div class="buttons">

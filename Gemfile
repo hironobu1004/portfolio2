@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'mini_magick'
 gem 'bcrypt',         '3.1.12'
 gem 'carrierwave'
 gem "sass-rails", "~>5.0"
