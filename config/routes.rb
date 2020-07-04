@@ -8,6 +8,7 @@ patch "/memos/:id",to:"memos#update"
 get "/categories/:id",to:"categories#show"
 get "/all",to:"memos#index"
 get "/memos/:id/details",to: "memos#details"
+post "/search",to:"memos#search"
 
  
 end

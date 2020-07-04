@@ -38,5 +38,7 @@ class MemosController < ApplicationController
         @note=Note.find(params["id"])
     
     end
-    
+    def search
+          @notes = Note.where('title LIKE ?', "%#{params["search"]}%")
+    end
 end
