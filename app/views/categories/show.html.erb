@@ -1,15 +1,21 @@
-<h5><%=@category.name%></h5>
+<h3><%=@category.name%></h3>
 
 <%@notes.each do |note|%>
 <div class="col-md-4">
-<div class="panel panel-success">
-  <div class="panel-heading"><%=note.title%><h4><%= note.category.name%></h4>
-  <a href = "/memos/<%=note.id%>" data-method="delete">削除</a>
-  <a href = "/memos/<%=note.id%>/edit" >編集</a></div>
-  <div class="panel-body">
-    <%=note.body%>
-  </div>
-</div>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <img src="<%= "#{note.image}" %>">
+          <h4>
+             <%=note.title%><br><%=note.updated_at.strftime('%Y/%m/%d')%><br>
+             <%= note.category.name%>
+          </h4>
+          <div class="buttons">
+              <a href = "/memos/<%=note.id%>" data-method="delete"><span class= "glyphicon glyphicon-trash"></span></a>
+              <a href = "/memos/<%=note.id%>/edit" ><span class= "glyphicon glyphicon-edit"></span></a>
+              <a href = "/memos/<%=note.id%>/details" ><span class= "glyphicon glyphicon-zoom-in"></span></a>
+          </div>
+      </div>
+    </div>
 </div>
 
 <%end%>
