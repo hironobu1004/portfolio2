@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+  gem 'pg', '0.21.0'
+  gem 'fog-aws'
+
+
 gem 'mini_magick'
 gem 'bcrypt',         '3.1.12'
 gem 'carrierwave'
@@ -53,7 +57,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-group :production do
-  gem 'pg', '0.21.0'
-  gem 'fog-aws'
-end
