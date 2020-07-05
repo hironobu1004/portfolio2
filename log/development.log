@@ -20840,3 +20840,63 @@ Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.5ms)
 DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/ec2-user/environment/Memo/config/initializers/new_framework_defaults.rb:21)
 DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/ec2-user/environment/Memo/config/initializers/new_framework_defaults.rb:21)
 DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/ec2-user/environment/Memo/config/initializers/new_framework_defaults.rb:21)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/ec2-user/environment/Memo/config/initializers/new_framework_defaults.rb:21)
+Started GET "/all" for 110.4.219.107 at 2020-07-05 16:21:40 +0000
+Cannot render console from 110.4.219.107! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MemosController#index as HTML
+  Rendering memos/index.html.erb within layouts/application
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered memos/index.html.erb within layouts/application (26.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 458ms (Views: 429.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/all" for 110.4.219.107 at 2020-07-05 16:21:42 +0000
+Cannot render console from 110.4.219.107! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MemosController#index as HTML
+  Rendering memos/index.html.erb within layouts/application
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered memos/index.html.erb within layouts/application (5.7ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/new" for 110.4.219.107 at 2020-07-05 16:21:43 +0000
+Cannot render console from 110.4.219.107! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MemosController#new as HTML
+  Rendering memos/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered memos/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 110.4.219.107 at 2020-07-05 16:21:45 +0000
+Cannot render console from 110.4.219.107! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MemosController#top as HTML
+  Rendering memos/top.html.erb within layouts/application
+  Rendered memos/top.html.erb within layouts/application (0.4ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/categories/5" for 110.4.219.107 at 2020-07-05 16:21:52 +0000
+Cannot render console from 110.4.219.107! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."category_id" = ?[0m  [["category_id", 5]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered categories/show.html.erb within layouts/application (3.8ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 43ms (Views: 39.6ms | ActiveRecord: 0.6ms)
+
+
