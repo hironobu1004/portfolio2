@@ -14,23 +14,20 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <a class="navbar-brand" href="/"><font color="white">Home</font></a>
     </div>
-
+<div class="form-inline">
+  <div class="form-group">
+   <div class="search form-group">
+    <%= form_with url: search_path, local: true do |f| %>
+        <%=f.text_field  :search, class:" form-control",id:"exampleInputName2",placeholder:"search"%>
+        <%=submit_tag "Search", class: "btn btn-primary search-btn"%>
+        <%end%>
+    </div>
+  </div>
+</div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <div class="search">
-        <%= form_with url: search_path, local: true do |f| %>
-        <%=f.text_field  :search, class:"form-group",placeholder:"search"%>
-        <%=submit_tag "Search", class: "btn btn-primary"%>
-        <%end%>
-        </div>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/all"><font color="white">All Book</a></font></li>
         <li><a href="/new"><font color="white">New Book</a></font></li>
