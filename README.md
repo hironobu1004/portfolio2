@@ -1,6 +1,6 @@
 
 【使用技術】
-HTML
+HTML<br>
 CSS
 Javascript / JQuery /
 Bootstrap 3
