@@ -1,6 +1,4 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
 【使用技術】
 HTML
 CSS
