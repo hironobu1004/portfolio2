@@ -6,8 +6,8 @@
       <div class="panel-heading">
         <img src="<%= "#{note.image}" %>">
           <h4>
-             <%=note.title%><br><%=note.updated_at.strftime('%Y/%m/%d')%><br>
-             <%= note.category.name%>
+             create day：<%=note.updated_at.strftime('%Y/%m/%d')%><br>
+             category : <%= note.category.name%>
           </h4>
           <div class="buttons">
               <a href = "/memos/<%=note.id%>" data-method="delete"><span class= "glyphicon glyphicon-trash"></span></a>
