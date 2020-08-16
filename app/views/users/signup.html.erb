@@ -1,0 +1,31 @@
+
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+      <%= form_for @user,:url => {:action => :make} do |f| %>
+        <%= render 'shared/error_messages' %>
+        <div class="user-form">
+          <%= f.label :name %><br> 
+            <div class="user-form-text">
+              <%= f.text_field :name, :size=>"60x10"%>
+            </div>
+          </div>
+        <div class="user-form"> 
+          <%= f.label :email %><br>
+            <div class="user-form-text">
+              <%= f.email_field :email , :size=>"60x10"%>
+            </div>
+        </div>
+        <div class="user-form"> 
+          <%= f.label :password %><br>
+            <div class="user-form-text">
+              <%= f.password_field :password, :size=>"60x10" %>
+            </div>
+        </div>
+        <div class="user-form"> 
+          <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

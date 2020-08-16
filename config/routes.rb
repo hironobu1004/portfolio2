@@ -9,6 +9,8 @@ get "/categories/:id",to:"categories#show"
 get "/all",to:"memos#index"
 get "/memos/:id/details",to: "memos#details"
 post "/search",to:"memos#search"
-
- 
+get "/signup",to: "users#signup"
+post "/signup",to:"users#make" 
+get "/users/index",to: "users#index"
+get "/users/:id" => "users#show"
 end
