@@ -1,8 +1,12 @@
+<h1>User List</h1>
+
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= @user.name %>
+      <% @users.each do |user|%>
+        <%= user.name %> <%= link_to "詳細","#{user.id}"%><br>
+      <%end%>  
       </h1>
     </section>
   </aside>

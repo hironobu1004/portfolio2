@@ -12,7 +12,8 @@ post "/search",to:"memos#search"
 get "/signup",to: "users#signup"
 post "/signup",to:"users#make" 
 get "/users/index",to: "users#index"
-get "/users/:id",to:"users#show"
+get "/users/:id",to:"users#show",as: 'user'
 get "/users/:id/edit",to:"users#edit"
-post "/users/:id/update",to:"users#update"
+patch "/users/:id",to:"users#update"
+delete "/users/:id",to:"users#destroy"
 end

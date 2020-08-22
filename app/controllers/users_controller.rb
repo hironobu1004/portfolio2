@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     def index
-        @user = User.all
+        @users = User.all
     end
 
     def show
@@ -22,25 +22,25 @@ class UsersController < ApplicationController
         end
         
     end
-    private
-
-    def user_params
-      params.permit(:name, :email, :password)
-    end 
     
     def edit
-        @user = User.find(params[:user][:id])
+        @user = User.find(params[:id])
     end 
     def update            
-       @user = User.find_by(id: params[:id])            
-       @user.name = params[:name]            
-       @user.email = params[:email] 
-       @user.password = params[:email]           
+       @user = User.find(params[:id])           
+       @user.name = params[:user][:name]            
+       @user.email = params[:user][:email] 
+       @user.password = params[:user][:password]           
        if @user.save            
        flash[:notice] = "ユーザー情報を編集しました"            
         redirect_to("/users/#{@user.id}")            
        else            
-           render("users/edit")            
+           render("users/:id/edit")            
        end  
     end    
+    def destroy
+        @user = User.find(params["id"])
+        @user.destroy
+        redirect_to"/users/index"
+    end   
 end
