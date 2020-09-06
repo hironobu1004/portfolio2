@@ -9,11 +9,7 @@ get "/categories/:id",to:"categories#show"
 get "/all",to:"memos#index"
 get "/memos/:id/details",to: "memos#details"
 post "/search",to:"memos#search"
-get "/signup",to: "users#signup"
-post "/signup",to:"users#make" 
-get "/users/index",to: "users#index"
-get "/users/:id",to:"users#show",as: 'user'
-get "/users/:id/edit",to:"users#edit"
-patch "/users/:id",to:"users#update"
-delete "/users/:id",to:"users#destroy"
+get "/signup",to: "users#new"
+post "/signup",to:"users#create"
+resources :users
 end

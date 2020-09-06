@@ -5,8 +5,8 @@
     <section class="user_info">
       <h1>
       <% @users.each do |user|%>
-        <%= user.name %> <%= link_to "詳細","#{user.id}"%><br>
-      <%end%>  
+        <%= user.name %> <%= link_to "詳細","/users/#{user.id}"%><br>
+      <%end%>
       </h1>
     </section>
   </aside>
