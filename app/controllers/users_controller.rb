@@ -18,7 +18,7 @@ class UsersController < ApplicationController
         flash[:success] = "ユーザー登録が完了しました"
         redirect_to @user
     else
-        render("/signup")
+        render "new"
         end
 
     end
@@ -35,13 +35,12 @@ class UsersController < ApplicationController
        flash[:notice] = "ユーザー情報を編集しました"
         redirect_to @user
        else
-           render("users/:id/edit")
+           render "edit"
        end
     end
     def destroy
-        @user = User.find(params["id"])
-        @user.destroy
+        user = User.find(params["id"]).destroy
         flash[:destroy] = "ユーザ情報を削除しました"
-        redirect_to @user
+        redirect_to user
     end
 end
