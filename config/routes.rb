@@ -12,4 +12,7 @@ post "/search",to:"memos#search"
 get "/signup",to: "users#new"
 post "/signup",to:"users#create"
 resources :users
+get "/login",to: "users#login_form"
+post "/login",to: "users#login"
+post "/logout",to: "users#logout"
 end

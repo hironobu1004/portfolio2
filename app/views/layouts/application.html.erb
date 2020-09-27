@@ -29,8 +29,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+      <% if @current_user %>
+      <li><%= link_to @current_user.name,"/users/#{@current_user.id}",:style=>"color:white;"%> </li>
+      <li><%= link_to "Login",login_path,:style=>"color:white;"%> </li>
       <li><%= link_to "User List",users_path,:style=>"color:white;"%> </li>
       <li><%= link_to "Sign Up",new_user_path,:style=>"color:white;"%> </li>
+      <li><%= link_to "Logout",logout_path,:style=>"color:white;",method: :post%></li>
+      <% else %>
+      <li><%= link_to "Login",login_path,:style=>"color:white;"%> </li>
+      <li><%= link_to "Sign Up",new_user_path,:style=>"color:white;"%> </li>
+      <% end %>
       <li><%= link_to "All Book",all_path,:style=>"color:white;"%> </li>
       <li><%= link_to "New Book",new_path,:style=>"color:white;"%> </li>
         <li class="dropdown">
