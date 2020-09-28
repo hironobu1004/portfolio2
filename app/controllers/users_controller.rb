@@ -19,8 +19,8 @@ class UsersController < ApplicationController
     def create
       @user = User.new(name: params[:user][:name], email: params[:user][:email], password: params[:user][:password])
         if @user.save
-          session[:user_id] = @user.id
-          flash[:success] = "ユーザー登録が完了しました"
+          log_in @user
+          flash[:success] = "Welcome to the Sample App!"
           redirect_to @user
         else
           render "new"
