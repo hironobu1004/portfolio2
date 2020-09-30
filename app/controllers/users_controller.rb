@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         @user = User.new
     end
     def create
-      @user = User.new(name: params[:user][:name], email: params[:user][:email], password: params[:user][:password])
+      @user = User.new(user_params)
         if @user.save
           log_in @user
           flash[:success] = "Welcome to the Sample App!"
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
        @user = User.find(params[:id])
        @user.name = params[:user][:name]
        @user.email = params[:user][:email]
-       @user.password = params[:user][:password]
+       @user.password = params[:user][:password_digest]
        if @user.save
        flash[:notice] = "ユーザー情報を編集しました"
         redirect_to @user
@@ -74,5 +74,11 @@ class UsersController < ApplicationController
         flash[:notice] = "権限がありません"
         redirect_to("/users")
       end
+    end
+    private
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password,
+                                   :password_confirmation)
     end
 end
