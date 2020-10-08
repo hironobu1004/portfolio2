@@ -29,8 +29,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/all"><font color="white">All Book</a></font></li>
-        <li><a href="/new"><font color="white">New Book</a></font></li>
+      <li><%= link_to "User List",users_path,:style=>"color:white;"%> </li>
+      <li><%= link_to "Sign Up",new_user_path,:style=>"color:white;"%> </li>
+      <li><%= link_to "All Book",all_path,:style=>"color:white;"%> </li>
+      <li><%= link_to "New Book",new_path,:style=>"color:white;"%> </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><font color="white">Category</font><span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -43,14 +45,14 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-         
+
     </header>
         <div class="container con">
             <%= yield %>
         </div>
   </body>
-  
-  
+
+
   <footer>
         <div class= "container">
             <p>
@@ -59,4 +61,3 @@
         </div>
     </footer>
 </html>
-

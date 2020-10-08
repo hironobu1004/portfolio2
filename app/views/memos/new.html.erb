@@ -1,5 +1,4 @@
 <h3>Book Create</h3>
-
 <%= form_tag('/create',{:multipart => true}) do %>
 
 <%=label_tag "form-title", "Title"%>
@@ -16,4 +15,3 @@
 <%= file_field :memos, :image %>
 <%=submit_tag "Create", class: "btn btn-primary create_btn"%>
 <%end%>
-

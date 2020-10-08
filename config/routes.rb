@@ -9,6 +9,7 @@ get "/categories/:id",to:"categories#show"
 get "/all",to:"memos#index"
 get "/memos/:id/details",to: "memos#details"
 post "/search",to:"memos#search"
-
- 
+get "/signup",to: "users#new"
+post "/signup",to:"users#create"
+resources :users
 end
