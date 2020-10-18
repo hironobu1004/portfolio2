@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
 root to: "memos#top"
 get "/new",to: "memos#new"
 post "/create",to:"memos#create"
@@ -12,4 +14,7 @@ post "/search",to:"memos#search"
 get "/signup",to: "users#new"
 post "/signup",to:"users#create"
 resources :users
+get "/login",to: "sessions#new"
+post "/login",to: "sessions#create"
+delete "/logout",to: "sessions#destroy"
 end

@@ -5,8 +5,10 @@
       <%= flash[:notice] %>
       <h2><%= @user.name %> </h2>
       <p><%= @user.email %></p>
+      <% if @user.id == @current_user.id %>
       <%= link_to "編集",edit_user_path %>
       <%= link_to "削除", user_path ,method: :delete %>
+      <% end %>
     </div>
   </div>
 </div>
